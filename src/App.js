@@ -1,11 +1,15 @@
-
-import './App.css';
+import React from 'react';
+import Countries from './components/Countries/Countries.js';
+import Header from './components/Header/Header.js';
+import Filter from './components/Filter/Filter.js';
 
 function App() {
   return (
-    <div className="App">
-     <h1>Where in the World?</h1>
-    </div>
+    <>
+     <Header />
+     <Filter />
+     <Countries />
+    </>
   );
 }
 

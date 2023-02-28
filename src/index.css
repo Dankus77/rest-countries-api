@@ -1,13 +1,132 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+font-family: 'Nunito Sans', sans-serif;
+background-color: hsl(207, 26%, 17%);
+color: hsl(0, 0%, 100%);
+}
+
+.country {
+display: grid;
+gap: 40px;
+grid-template-columns: 1fr;
+padding: 20px;
+}
+
+.country article img {
+border-radius: 5px 5px 0 0;
+height: 200px;
+}
+
+.info {
+  background-color: hsl(209, 23%, 22%);
+  padding: 40px 20px;
+  margin-top: -25px;
+  border-radius: 0 0 5px 5px;
+}
+
+.country .info h3 {
+  padding-bottom: 10px;
+}
+
+.country .info h4 {
+  padding-bottom: 5px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(209, 23%, 22%);
+  padding: 10px 20px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.filter .inputForm {
+  width: 100%;
+}
+
+.filter .inputForm input {
+  background-color: hsl(209, 23%, 22%);
+  margin: 0 0 30px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.filter .inputForm input::placeholder {
+  color: #fff;
+}
+
+
+.filter .selection .select {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+  font-family: inherit;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+}
+
+@media (min-width: 640px) {
+  .country {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+.filter {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter .inputForm {
+  width: auto;
+}
+
+.filter .inputForm input {
+  width: auto;
+  margin: 0;
+}
+
+.filter .selection {
+  width: 100%;
+}
+
+  .country {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+
+.header, .filter, .country {
+  padding: 20px 100px;
+}
+
+  .country {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+  }
 }
