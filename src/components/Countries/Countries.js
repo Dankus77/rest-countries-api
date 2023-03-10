@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import {Link} from 'react-router-dom';
 
 const url = 'https://restcountries.com/v2/all';
 const Countries = () => {
@@ -15,6 +15,11 @@ const Countries = () => {
     fetchCountries();
     }, [])
 
+    const removeCountry = (alpha2Code) => {
+        const newCountry = countries.filter(country => country.alpha2Code !== alpha2Code)
+        setCountries(newCountry)
+    }
+
     return (
     <div>
         <section className="country">
@@ -28,6 +33,8 @@ const Countries = () => {
                 <h4>Population: {population}</h4> 
                 <h4>Region: {region}</h4>
                 <h4>Capital: {capital}</h4>
+                <Link to={`/countries/${name}`} className="btn">Learn More</Link>
+                <button className="btn" onClick={() => removeCountry(alpha2Code)}>Remove Country</button>
                 </div>
                 </div>
             </article>

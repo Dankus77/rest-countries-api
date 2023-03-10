@@ -89,6 +89,10 @@ img {
   width: 200px;
 }
 
+.buttons {
+  
+}
+
 @media (min-width: 640px) {
   .country {
     grid-template-columns: repeat(2, 1fr);
